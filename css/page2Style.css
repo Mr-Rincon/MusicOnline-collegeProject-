@@ -1,0 +1,299 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.albumCover{
+    height: 300px;
+}
+
+.accordion{
+    height: 100px;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border: 1px #ccc solid;
+    border-radius: 5px;
+}
+
+.accordion .cover{
+    width: 150px;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.accordion .cover img{
+    width: 100%;
+    height: 100%;
+}
+
+.accordion .deleteBtn{
+    width: 70px;
+    height: 70px;
+    background-color: brown;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.accordion .editBtn{
+    width: 70px;
+    height: 70px;
+    background-color: lightblue;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.accordion .viewBtn{
+    width: 70px;
+    height: 70px;
+    background-color: gainsboro;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flexAlignXnY{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.hoverDarker:hover{
+    filter: brightness(0.7);
+}
+
+@media (max-width: 568px){
+    .sellingItemTitle{
+        display: none;
+    }
+
+    .accordion .cover{
+        margin-right: auto;
+    }
+}
+
+.modal-body form .form-group{
+    margin-bottom: 5px;
+}
+
+
+.modal-body form .form-group label{
+    padding: 3px 0px;
+}
+
+
+.niceAlert{ /* Nice alert to display messages - style*/
+    width: 300px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0.8;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -350px;
+    transition: all 0.6s ease-in;
+    z-index: 55;
+}
+
+.niceAlertShow{ /* Show nice alert */
+    right: 20px;
+    border: rgba(0, 0, 0, 0.3) solid 1px;
+}
+
+.payMethod:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.purchaseItem{
+    border-radius: 5px;
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border: 1px #ccc solid;
+}
+.purchaseItemPic{
+    border-radius: 5px 0px 0px 5px;
+}
+
+.eyebtn{
+    width: 100px;
+    height: 78px;
+    background-color: gainsboro;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+    padding: 1rem;
+}
+.eyebtn:hover{
+    filter:brightness(0.7);
+}
+
+.purchaseItemTitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+@media (max-width: 568px){
+    .purchaseItemPic{
+        display: none;
+    }
+    .purchaseItemTitle{
+        white-space: initial;
+        font-size: 1.5rem;
+        overflow: hidden;
+        align-self: start;
+    }
+}
+
+.userPhoto{
+    height: 250px;
+    width: 250px;
+    background-color: khaki;
+    margin-bottom: 2rem;
+}
+
+.userInfo{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.userInfoItem{
+    width: 50%;
+}
+
+.weeIcon img{
+    width: 32px;
+}
+.userInfo input{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.userInfo a{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-left: 5px;
+}
+
+
+@media (max-width: 1000px){
+
+    .userInfoItem{
+        width: 100%;
+    }
+}
+
+.editUserDetailsBtn{
+    padding: 1rem;
+    background: lightblue;
+    font-size: 2rem;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.homeCard{
+    height: 20vh;
+    padding: 5px;
+}
+
+.homeCard .inside{
+    border: grey 1px solid;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.bigMenuBtn{
+    background-color: #3c753c;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 50px;
+    color: honeydew;
+    margin: auto auto 10px auto;
+    border: 1px solid #ccc;
+    transition: all 0.5s;
+    display: none;
+}
+
+.bigMenuBtn:hover{
+    filter: brightness(0.7);
+    letter-spacing: 5px;
+}
+.bigMenuBtn:active, .bigMenuBtn:focus{
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.storeBigMenu{
+    background-image: url('https://ak.picdn.net/assets/cms/music_subscription_homepage_banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.sellingBigMenu{
+    background-image: url('https://cdn.vox-cdn.com/thumbor/0fPNabFt96yEmvSfyr7cHHZdjbw=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13292797/acastro_181016_1777_music_0001.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.purchaseBigMenu{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSwuNnrhWWH8Qbyi-L_FeLIhUrRxMPJA8hMCeVaP3FBo3Zlii8G&usqp=CAU');
+    background-size: cover;
+    background-position: center;
+}
+
+.profileBigMenu{
+    background-image: url('https://m.cdn.sera.to/v3/homepage/background/boxing-day/boxing-day-hero-md.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contentContainer{
+    display: none;
+}
+
+.textOverflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modalOver{
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    background-color: red;
+}
+
+
+#logoutMenuBtn{
+    color: #a17373;
+    border: 1px #555 solid;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+#logoutMenuBtn:hover{
+    color: #be6ea0;
+    background-color: hsl(0, 58%, 32%, 0.2);
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Music Online</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/adminStyle.css">
+</head>
+
+<body>
+
+	<div class="d-flex" id="wrapper">
+
+		<!-- Sidebar -->
+		<div class="bg-light border-right" id="sidebar-wrapper">
+			<div class="sidebar-heading">Music Online </div>
+			<div class="list-group list-group-flush">
+				<a href="#dashboard" role="tab" data-toggle="tab" aria-selected="true"
+					class="list-group-item list-group-item-action bg-light" id="leftMenuLinkDashboard">Dashboard</a>
+				<a href="#users" role="tab" data-toggle="tab" aria-selected="false"
+					class="list-group-item list-group-item-action bg-light" id="leftMenuLinkUsers">Users</a>
+				<a href="#vinyls" role="tab" data-toggle="tab" aria-selected="false"
+					class="list-group-item list-group-item-action bg-light" id="leftMenuLinkVinyls">Vinyls</a>
+				<a href="#orders" role="tab" data-toggle="tab" aria-selected="false"
+					class="list-group-item list-group-item-action bg-light" id="leftMenuLinkOrders">Orders</a>
+			</div>
+		</div><!-- /#sidebar-wrapper -->
+
+		<div id="page-content-wrapper">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+				<button class="btn btn-light border" id="menu-toggle"><img
+						src="img/icons/layout-text-window-reverse.svg" height="32px" alt=""></button>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a href="#" class="nav-link" id="logoutBtnID">Log Out</a>
+						</li>
+					</ul>
+				</div>
+			</nav><!-- /#Top nav bar -->
+
+			<div class="container-fluid adminContentContainers tab-content">
+
+				<div role="tabpanel" class="tab-pane mb-3 active" id="dashboard"></div>
+				<!-- /#Dashboard -->
+
+				<div role="tabpanel" class="tab-pane" id="users">
+
+					<h1><img src="img/icons/person-fill.svg" height="48px" alt=""> Users Panel</h1>
+
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<thead class="thead-inverse">
+								<tr>
+									<th class=""><input class="form-control" type="search" placeholder="Search user" id="userSearchBar"></th>
+								</tr>
+							</thead>
+							<tbody id="userTableBody">
+
+							</tbody>
+						</table>
+					</div>
+				</div><!-- /#Users -->
+
+				<div role="tabpanel" class="tab-pane" id="vinyls">
+
+					<h1><img src="img/icons/music-note-list.svg" height="48px" alt=""> Vinyls Panel</h1>
+
+					<div class="table-responsive">
+						<table class="table">
+							<thead class="thead-inverse">
+								<tr>
+									<th class=""><input class="form-control" type="search" placeholder="Search vinyls" id="vinylsSearchBar"></th>
+								</tr>
+							</thead>
+							<tbody id="vinylsTableBody">
+							</tbody>
+						</table>
+					</div>
+
+				</div><!-- /#Vinyls -->
+
+				<div role="tabpanel" class="tab-pane" id="orders">
+
+					<h1><img src="img/icons/bag.svg" height="48px" alt=""> Orders Panel</h1>
+
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<thead class="thead-inverse">
+								<tr>
+									<th>ID</th>
+									<th>Buyer</th>
+									<th>Date</th>
+									<th>Item</th>
+									<th>Price</th>
+									<th>Qty</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody id="ordersTableBody">
+							</tbody>
+						</table>
+					</div>
+				</div><!-- /#Orders -->
+
+			</div><!-- /#Content separator parent -->
+
+		</div><!-- /#page-content-wrapper -->
+
+	</div><!-- /#wrapper -->
+
+	<!-- Modal confirmation 1 -->
+	<div id="mmm1" class="modal fade in modalOver" style="background-color: rgba(0, 0, 0, 0.6);">
+		<div class="modal-dialog modal-dialog-centered modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Are you sure?</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="modalConfirmation1">Yes</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal confirmation 2 -->
+	<div id="mmm2" class="modal fade in modalOver" style="background-color: rgba(0, 0, 0, 0.6);">
+		<div class="modal-dialog modal-dialog-centered modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Are you sure?</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="modalConfirmation2">Yes</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="niceAlert" id="niceAlert" tabindex="111"></div>
+
+	<!-- SCRIPTS DOWN HERE \|/ -->
+	<script src="js/adminPage.js"></script>
+	<script src="js/jquery.js"></script>
+	<!-- <script src="js/popper.js"></script> -->
+	<script src="js/bootstrap.js"></script>
+</body>
+
+</html>

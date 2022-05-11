@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MusicOnline</title>
+	<link rel="stylesheet" type="text/css" href="css/page2Style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+
+<body>
+
+	<!-- NAV BAR -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+
+			<a class="navbar-brand" href="#" id="brandMenuBtn">MusicOnline</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+				aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				<form class="form-inline my-2 mr-auto my-lg-0 mx-auto">
+					<input class="form-control" type="search" placeholder="Search" id="searchBar">
+					<!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+				</form>
+				<ul class="navbar-nav mt-2 mt-lg-0" id="navItems">
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="homeMenuBtn">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="storeMenuBtn">Store</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="sellingMenuBtn">Selling</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="purchaseMenuBtn">Purchases</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" id="profileMenuBtn">Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link logoutBtn" href="#" id="logoutMenuBtn">Log out</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container bg-light pt-5 vh-100">
+
+		<!-- HOME -->
+		<div class="container pt-3 contentContainer" id="homeContainer">
+
+			<div class="row">
+				<div class="col-12 homeCard">
+					<div class="inside storeBigMenu"><button class="bigMenuBtn" id="storeBigMenuBtn">STORE</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col 12 homeCard">
+					<div class="inside sellingBigMenu"><button class="bigMenuBtn"
+							id="sellingBigMenuBtn">SELLING</button></div>
+				</div>
+				<div class="col-12 homeCard">
+					<div class="inside purchaseBigMenu"><button class="bigMenuBtn"
+							id="purchasesBigMenuBtn">PURCHASES</button></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 homeCard">
+					<div class="inside profileBigMenu"><button class="bigMenuBtn"
+							id="profileBigMenuBtn">PROFILE</button></div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--STORE-->
+		<!--Display all the items from DB-->
+		<div class="container pt-3 contentContainer" id="storeContainer">
+
+			<div class="row" id="storeItems">
+				<!-- Gets filled with vinilys from the database -->
+			</div>
+
+		</div>
+
+		<!--SELLING-->
+		<!--Display all the items from DB where the owner id is equal to the logged in user-->
+		<div class="container pt-3 contentContainer" id="sellingContainer">
+
+			<div class="page-header  text-right">
+				<button class="btn btn-primary" data-toggle="modal" data-target="#editProductModal"
+					id="addNewItemToSellBtn">Sell a new item <span class="font-weight-bold">+</span></button>
+				<hr>
+			</div>
+
+			<div id="sellingItems">
+
+			</div>
+		</div>
+
+		<!--PURCHASES-->
+		<div class="container pt-3 contentContainer" id="purchaseContainer">
+
+			<div id="purchasedItems">
+
+				<h1>PURCHASES</h1>
+
+			</div>
+
+		</div>
+
+		<!--PROFILE-->
+		<div class="container pt-3 contentContainer" id="profileContainer">
+			<div class="profile">
+				<div class="userPhoto mx-auto rounded-circle"><img src="img/icons/person.svg" width="100%" alt=""
+						class=""></div>
+
+				<div class="userInfo" id="userProfileDetails">
+
+					<!-- All the user details from DB -->
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Modal BUY-->
+	<div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog  modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalLabel">Album title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center py-0">
+
+					<div class="col-sm-12 pb-2 pr-0 pl-0">
+						<img src="https://www.sodi-techedm.co.uk/wp-content/themes/consultix/images/no-image-found-360x260.png"
+							class="img-fluid" id="albumCover" alt="Responsive image">
+					</div>
+
+					<div class="row px-2">
+
+						<div class="text-justify col-sm-6">
+							<h3 class="text-truncate">Artist: <small id="albumArtist"></small></h3>
+							<h3 class="text-truncate">Genre: <small id="albumGenre"></small></h3>
+							<h3 class="text-truncate">Release: <small id="albumRelease"></small></h3>
+							<h3 class="text-truncate d-none"><small id="albumId"></small></h3>
+						</div>
+
+						<div class="text-justify col-sm-6">
+							<h3>Information</h3>
+							<p id="albumDescription"></p>
+						</div>
+
+					</div>
+
+					<div class="itemAvailability col-sm-12">
+
+						<div class="alert alert-success" id="itemAvailability" role="alert">
+							<span id="itemAvailable">1</span> Available
+						</div>
+
+						<div class="alert alert-warning" id="itemUnavailable" role="alert">
+							Sold out!
+						</div>
+
+					</div>
+
+				</div>
+				<div class="modal-footer d-flex justify-content-between">
+					<div class="d-flex">
+
+						<div class="form-group mr-2">
+							<select class="form-control" id="itemsAvailableDropDown">
+							</select>
+						</div>
+
+						<h3 class="text-muted">Price: £<span id="albumPriceDisplayed">15.99</span><span class="d-none"
+								id="albumPrice">15.99</span></h3>
+					</div>
+
+					<div>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-success" id="buyingBtn" data-toggle="modal"
+							data-target=".bd-example-modal-sm" data-dismiss="modal">Buy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal EDIT and NEW-->
+	<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog  modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editProductModalTitle">Edit Product Details</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+
+					<form class="pl-3 pr-3">
+
+						<div class="form-group text-center">
+							<img src="https://www.sodi-techedm.co.uk/wp-content/themes/consultix/images/no-image-found-360x260.png"
+								alt="" style="max-height: 150px;" class="col-form-label" id="editAlbumCoverDislpayed">
+							<div class="text-left">
+								<label for="example-text-input" class="col-form-label">Cover image url</label>
+								<div class="">
+									<input class="form-control" type="search" placeholder="https://coverimage.com"
+										value="" id="editAlbumCover">
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="example-text-input" class="col-form-label">Title</label>
+							<div class="">
+								<input class="form-control" type="search" placeholder="Album title" id="editAlbumTitle"
+									value="">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="example-search-input" class="col-form-label">Artist</label>
+							<div class="">
+								<input class="form-control" type="search" placeholder="Artist or band name"
+									id="editAlbumArtist">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="example-search-input" class="col-form-label">Genre</label>
+							<div class="">
+								<input class="form-control" type="search" placeholder="Album genre" id="editAlbumGenre">
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<label for="example-number-input" class="col-form-label">Stock</label>
+							<div class="">
+								<input class="form-control" type="number" value="0" placeholder="0" id="editAlbumStock">
+							</div>
+
+							<label for="example-number-input" class="col-form-label px-0">Price</label>
+							<div class="input-group pl-0">
+
+								<div class="input-group-prepend">
+									<span class="input-group-text">£</span>
+								</div>
+								<input class="form-control" type="number" placeholder="00.00" id="editAlbumPrice">
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<label for="example-date-input" class="col-form-label">Release Date</label>
+							<div class="">
+								<input class="form-control" type="date" value="1999-01-01" id="editAlbumRelease">
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<label for="example-date-input" class="col-form-label">Information</label>
+							<div class="">
+								<textarea style="width: 100%;" rows="3" placeholder="Album information"
+									id="editAlbumInfo"></textarea>
+									<p class="d-none" id="vinyl_id"></p>
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+
+				<!-- Modal confirmation -->
+				<div class="modal-footer d-flex justify-content-between">
+					<div class="mr-auto">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-success" id="editProductModalSaveBtn"
+							data-toggle="modal" data-target="#mmm2">Save changes</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal"
+							id="editProductModal-AddNewItemBtn">Put on sale</button>
+							<div class="niceAlert" id="saveChanges" tabindex="111"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal confirmation 1 -->
+	<div id="mmm" class="modal fade in modalOver" style="background-color: rgba(0, 0, 0, 0.6);">
+		<div class="modal-dialog modal-dialog-centered modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Are you sure?</h4>	
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="modalConfirmation">Yes</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal confirmation 2 -->
+	<div id="mmm2" class="modal fade in modalOver" style="background-color: rgba(0, 0, 0, 0.6);">
+		<div class="modal-dialog modal-dialog-centered modal-confirm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Are you sure?</h4>	
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal" id="modalConfirmation2">Yes</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal purchased item -->
+	<div class="modal fade" id="purchasedItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog  modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="purchasedTitleModal">Title unavailable</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body text-center py-0 col-12 row">
+
+					<div class="col-sm-6">
+						<img src="https://www.sodi-techedm.co.uk/wp-content/themes/consultix/images/no-image-found-360x260.png"
+							class="img-fluid" id="purchasedCoverModal" alt="Responsive image">
+					</div>
+
+					<div class="text-justify col-sm-6">
+						<h3 class="text-truncate">Date: <small id="purchasedDateModal">unavailable</small></h3>
+						<h3 class="text-truncate">Price: <small>£<span
+									id="purchasedPriceModal">unavailable</span></small></h3>
+						<h3 class="text-truncate">Qty: <small id="purchasedQtyModal">unavailable</small></h3>
+					</div>
+
+				</div>
+
+				<div class="modal-footer d-flex justify-content-between">
+					<h3 class="text-muted">Total: £<span id="purchasedTotalModal">15.99</span></h3>
+					<div>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="niceAlert" id="niceAlert" tabindex="111"></div>
+	<!--NICE ALERT-->
+
+	<!-- SCRIPTS DOWN HERE \|/ -->
+	<script src="js/main.js"></script>
+	<script src="js/jquery.js"></script>
+	<!-- <script src="js/popper.js"></script> -->
+	<script src="js/bootstrap.js"></script>
+</body>
+
+</html>
